@@ -36,16 +36,19 @@ const navigationLinks = [
     name: "About",
     href: "/about",
     icon: <InfoIcon style={{ minWidth: "40px" }} />,
+    target: "_self",
   },
   {
     name: "Projects",
     href: "/projects",
     icon: <FolderIcon style={{ minWidth: "40px" }} />,
+    target: "_self",
   },
   {
     name: "Resume",
-    href: "/resume",
+    href: "https://drive.google.com/file/d/1obthN9sq16jpwg8XaESW7y6sy-PSvU1H/preview",
     icon: <DescriptionIcon style={{ minWidth: "40px" }} />,
+    target: "_blank",
   },
 ];
 
@@ -194,6 +197,7 @@ export default function PersistentDrawerLeft() {
                 variant="button"
                 underline="none"
                 href={item.href}
+                target={item.target}
               >
                 {item.name}
               </Link>
@@ -206,13 +210,15 @@ export default function PersistentDrawerLeft() {
             {connectLinks.map((item) => (
               <Grid item xs={4}>
                 <ListItem key={item.name}>
-                  {item.icon}
                   <Link
                     color="white"
                     variant="button"
                     underline="none"
                     href={item.href}
-                  ></Link>
+                    target="_blank"
+                  >
+                    {item.icon}
+                  </Link>
                 </ListItem>
               </Grid>
             ))}
