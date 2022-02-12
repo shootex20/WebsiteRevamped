@@ -26,7 +26,8 @@ function Aboutme() {
         left: "50%",
         top: "50%",
         transform: "translate(-50%, -50%)",
-        border: "2px solid rgba(255, 255, 255, 0.4)",
+        border:
+          "2px solid #121212 linear-gradient(rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.09))",
         borderRadius: "25px",
         width: "70%",
       }}
