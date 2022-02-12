@@ -38,59 +38,100 @@ function Aboutme() {
           justifyContent: "center",
           alignItems: "center",
           borderRadius: "25px",
-          backgroundColor: "#121212",
-          padding: "5%",
+          padding: "1%",
           width: "100%",
           height: "100%",
-          backgroundImage:
-            "linear-gradient(rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.09))",
         }}
       >
         <Grid container spacing={2}>
           <Grid item xs={12} display={"flex"}>
-            <TextField
-              disabled
-              id="contained-disabled"
-              label="Education"
-              defaultValue="Graduated from Southern Alberta Institute of Technology majoring in Software Development."
-              multiline
-              fullWidth
-              rows={5}
-            />
+            <div
+              style={{
+                borderRadius: "10px",
+                backgroundColor: "#121212",
+                width: "100%",
+                height: "100%",
+                backgroundImage:
+                  "linear-gradient(rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.09))",
+              }}
+            >
+              <TextField
+                disabled
+                id="contained-disabled"
+                label="Education"
+                defaultValue="Graduated from Southern Alberta Institute of Technology majoring in Software Development."
+                multiline
+                fullWidth
+                rows={5}
+              />
+            </div>
           </Grid>
           <Grid item xs={12}>
-            <TextField
-              disabled
-              id="contained-disabled"
-              label="Experience"
-              defaultValue="Junior DevOps @ SparrowConnected.
+            <div
+              style={{
+                borderRadius: "10px",
+                backgroundColor: "#121212",
+                width: "100%",
+                height: "100%",
+                backgroundImage:
+                  "linear-gradient(rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.09))",
+              }}
+            >
+              <TextField
+                disabled
+                id="contained-disabled"
+                label="Experience"
+                defaultValue="Junior DevOps @ SparrowConnected.
 June 2021 - Current"
-              multiline
-              fullWidth
-              rows={5}
-            />
+                multiline
+                fullWidth
+                rows={5}
+              />
+            </div>
           </Grid>
           <Grid item xs={12}>
-            <TextField
-              disabled
-              id="contained-disabled"
-              label="Programming languages"
-              defaultValue="Java, JavaScript/HTML/CSS, SQL, Bash, C#, React.js, TypeScript.js"
-              multiline
-              fullWidth
-              rows={5}
-            />
+            <div
+              style={{
+                borderRadius: "10px",
+                backgroundColor: "#121212",
+                width: "100%",
+                height: "100%",
+                backgroundImage:
+                  "linear-gradient(rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.09))",
+              }}
+            >
+              <TextField
+                disabled
+                id="contained-disabled"
+                label="Programming languages"
+                defaultValue="Java, JavaScript/HTML/CSS, SQL, Bash, C#, React.js, TypeScript.js"
+                multiline
+                fullWidth
+                rows={5}
+              />
+            </div>
           </Grid>
           <Grid item xs={12}>
-            <TextField
-              disabled
-              id="contained-disabled"
-              label="Tools and Frameworks"
-              defaultValue="Express.js, Node.js, .Net, Azure, Git, Azure DevOps, CI/CD, Maven, Tomcat"
-              multiline
-              fullWidth
-              rows={5}
-            />
+            <div
+              style={{
+                borderRadius: "10px",
+                backgroundColor: "#121212",
+                width: "100%",
+                height: "100%",
+                backgroundImage:
+                  "linear-gradient(rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.09))",
+              }}
+            >
+              <TextField
+                disabled
+                id="contained-disabled"
+                label="Tools and Frameworks"
+                defaultValue="Express.js, Node.js, .Net, Azure, Git, Azure DevOps, CI/CD, Maven, Tomcat"
+                multiline
+                fullWidth
+                rows={5}
+              />
+            </div>
           </Grid>
         </Grid>
       </div>
