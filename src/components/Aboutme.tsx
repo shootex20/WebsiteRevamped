@@ -26,7 +26,7 @@ function Aboutme() {
         left: "50%",
         top: "50%",
         transform: "translate(-50%, -50%)",
-        border: "2px solid #000000",
+        border: "2px solid rgba(255, 255, 255, 0.4)",
         borderRadius: "25px",
         width: "70%",
       }}
