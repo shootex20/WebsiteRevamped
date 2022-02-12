@@ -1,5 +1,10 @@
 import * as React from "react";
-import { styled, useTheme } from "@mui/material/styles";
+import {
+  createTheme,
+  styled,
+  ThemeProvider,
+  useTheme,
+} from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -27,27 +32,48 @@ const drawerWidth = 240;
 const useStyles = {
   icon: {
     minWidth: "30px",
+    color: "green",
   },
 };
 
 const navigationLinks = [
-  { name: "Home", href: "/", icon: <HomeIcon style={{ minWidth: "40px" }} /> },
+  {
+    name: "Home",
+    href: "/",
+    icon: (
+      <HomeIcon
+        style={{ minWidth: "40px", color: "rgba(255, 255, 255, 0.7)" }}
+      />
+    ),
+  },
   {
     name: "About",
     href: "/about",
-    icon: <InfoIcon style={{ minWidth: "40px" }} />,
+    icon: (
+      <InfoIcon
+        style={{ minWidth: "40px", color: "rgba(255, 255, 255, 0.7)" }}
+      />
+    ),
     target: "_self",
   },
   {
     name: "Projects",
     href: "/projects",
-    icon: <FolderIcon style={{ minWidth: "40px" }} />,
+    icon: (
+      <FolderIcon
+        style={{ minWidth: "40px", color: "rgba(255, 255, 255, 0.7)" }}
+      />
+    ),
     target: "_self",
   },
   {
     name: "Resume",
     href: "https://drive.google.com/file/d/1obthN9sq16jpwg8XaESW7y6sy-PSvU1H/preview",
-    icon: <DescriptionIcon style={{ minWidth: "40px" }} />,
+    icon: (
+      <DescriptionIcon
+        style={{ minWidth: "40px", color: "rgba(255, 255, 255, 0.7)" }}
+      />
+    ),
     target: "_blank",
   },
 ];
@@ -125,6 +151,24 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   justifyContent: "flex-end",
 }));
 
+const themePalete = createTheme({
+  palette: {
+    background: {
+      paper: "#000000",
+    },
+  },
+});
+
+const StyledDrawer = styled(Drawer)`
+  & > div {
+    background-color: #121212;
+    background-image: linear-gradient(
+      rgba(255, 255, 255, 0.09),
+      rgba(255, 255, 255, 0.09)
+    );
+  }
+`;
+
 export default function PersistentDrawerLeft() {
   const theme = useTheme();
   // const storedOpen = JSON.parse(localStorage.getItem('drawerOpen'));
@@ -147,84 +191,88 @@ export default function PersistentDrawerLeft() {
   };
 
   return (
-    <Box sx={{ display: "flex" }}>
-      <CssBaseline />
-      <AppBar position="fixed" open={open}>
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerOpen}
-            edge="start"
-            sx={{ mr: 2, ...(open && { display: "none" }) }}
-          >
-            <MenuIcon />
-          </IconButton>
-        </Toolbar>
-      </AppBar>
-      <Drawer
-        sx={{
-          width: drawerWidth,
-          flexShrink: 0,
-          "& .MuiDrawer-paper": {
+    <ThemeProvider theme={theme}>
+      <Box sx={{ display: "flex", zIndex: 1 }}>
+        <CssBaseline />
+        <AppBar position="fixed" open={open}>
+          <Toolbar>
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              onClick={handleDrawerOpen}
+              edge="start"
+              sx={{ mr: 2, ...(open && { display: "none" }) }}
+            >
+              <MenuIcon />
+            </IconButton>
+          </Toolbar>
+        </AppBar>
+        <StyledDrawer
+          sx={{
             width: drawerWidth,
-            boxSizing: "border-box",
-          },
-        }}
-        variant="persistent"
-        anchor="left"
-        open={open}
-      >
-        <DrawerHeader>
-          <Typography variant="h6" noWrap component="div">
-            Chelsey Coughlin
-          </Typography>
-          <IconButton onClick={handleDrawerClose}>
-            {theme.direction === "ltr" ? (
-              <ChevronLeftIcon />
-            ) : (
-              <ChevronRightIcon />
-            )}
-          </IconButton>
-        </DrawerHeader>
-        <Divider />
-        <List>
-          {navigationLinks.map((item) => (
-            <ListItem key={item.name}>
-              {item.icon}
-              <Link
-                color="white"
-                variant="button"
-                underline="none"
-                href={item.href}
-                target={item.target}
-              >
-                {item.name}
-              </Link>
-            </ListItem>
-          ))}
-        </List>
-
-        <List style={{ marginTop: `auto` }}>
-          <Grid container justifyContent={"center"}>
-            {connectLinks.map((item) => (
-              <Grid item xs={4}>
-                <ListItem key={item.name}>
-                  <Link
-                    color="white"
-                    variant="button"
-                    underline="none"
-                    href={item.href}
-                    target="_blank"
-                  >
-                    {item.icon}
-                  </Link>
-                </ListItem>
-              </Grid>
+            paper: "#000000",
+            flexShrink: 0,
+            "& .MuiDrawer-paper": {
+              width: drawerWidth,
+              boxSizing: "border-box",
+            },
+          }}
+          color="primary"
+          variant="persistent"
+          anchor="left"
+          open={open}
+        >
+          <DrawerHeader>
+            <Typography variant="h6" noWrap component="div" className="text">
+              Chelsey Coughlin
+            </Typography>
+            <IconButton onClick={handleDrawerClose}>
+              {theme.direction === "ltr" ? (
+                <ChevronLeftIcon />
+              ) : (
+                <ChevronRightIcon />
+              )}
+            </IconButton>
+          </DrawerHeader>
+          <Divider />
+          <List>
+            {navigationLinks.map((item) => (
+              <ListItem key={item.name}>
+                {item.icon}
+                <Link
+                  color="white"
+                  variant="button"
+                  underline="none"
+                  href={item.href}
+                  target={item.target}
+                >
+                  {item.name}
+                </Link>
+              </ListItem>
             ))}
-          </Grid>
-        </List>
-      </Drawer>
-    </Box>
+          </List>
+
+          <List style={{ marginTop: `auto` }}>
+            <Grid container justifyContent={"center"}>
+              {connectLinks.map((item) => (
+                <Grid item xs={4}>
+                  <ListItem key={item.name}>
+                    <Link
+                      color="white"
+                      variant="button"
+                      underline="none"
+                      href={item.href}
+                      target="_blank"
+                    >
+                      {item.icon}
+                    </Link>
+                  </ListItem>
+                </Grid>
+              ))}
+            </Grid>
+          </List>
+        </StyledDrawer>
+      </Box>
+    </ThemeProvider>
   );
 }

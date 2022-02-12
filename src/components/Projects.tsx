@@ -9,11 +9,13 @@ import OurSafetyApp from "./Projects/OurSafetyApp";
 function Projects() {
   return (
     <>
+      <div style={{ marginTop: 65 }}></div>
       <Box
         display="flex"
         justifyContent="center"
         alignItems="center"
         minHeight="100vh"
+        maxWidth="100%"
       >
         <Grid container sm={3}>
           <HomeNventoryJava />
@@ -21,6 +23,7 @@ function Projects() {
           <OurSafetyApp />
         </Grid>
       </Box>
+      <div style={{ marginBottom: 10 }}></div>
     </>
   );
 }
