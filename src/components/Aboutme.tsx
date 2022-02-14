@@ -20,122 +20,126 @@ function Aboutme() {
   });
 
   return (
-    <div
-      style={{
-        position: "absolute",
-        left: "50%",
-        top: "50%",
-        transform: "translate(-50%, -50%)",
-        border:
-          "2px solid #121212 linear-gradient(rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.09))",
-        borderRadius: "25px",
-        width: "70%",
-      }}
-    >
+    <>
+      <div style={{ marginTop: 65 }}></div>
       <div
         style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
+          position: "absolute",
+          left: "50%",
+          top: "50%",
+          transform: "translate(-50%, -50%)",
+          border:
+            "2px solid #121212 linear-gradient(rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.09))",
           borderRadius: "25px",
-          padding: "1%",
-          width: "100%",
-          height: "100%",
+          width: "70%",
         }}
       >
-        <Grid container spacing={2}>
-          <Grid item xs={12} display={"flex"}>
-            <div
-              style={{
-                borderRadius: "10px",
-                backgroundColor: "#121212",
-                width: "100%",
-                height: "100%",
-                backgroundImage:
-                  "linear-gradient(rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.09))",
-              }}
-            >
-              <TextField
-                disabled
-                id="contained-disabled"
-                label="Education"
-                defaultValue="Graduated from Southern Alberta Institute of Technology majoring in Software Development."
-                multiline
-                fullWidth
-                rows={5}
-              />
-            </div>
-          </Grid>
-          <Grid item xs={12}>
-            <div
-              style={{
-                borderRadius: "10px",
-                backgroundColor: "#121212",
-                width: "100%",
-                height: "100%",
-                backgroundImage:
-                  "linear-gradient(rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.09))",
-              }}
-            >
-              <TextField
-                disabled
-                id="contained-disabled"
-                label="Experience"
-                defaultValue="Junior DevOps @ SparrowConnected.
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            borderRadius: "25px",
+            padding: "1%",
+            width: "100%",
+            height: "100%",
+          }}
+        >
+          <Grid container spacing={2}>
+            <Grid item xs={12} display={"flex"}>
+              <div
+                style={{
+                  borderRadius: "10px",
+                  backgroundColor: "#121212",
+                  width: "100%",
+                  height: "100%",
+                  backgroundImage:
+                    "linear-gradient(rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.09))",
+                }}
+              >
+                <TextField
+                  disabled
+                  id="contained-disabled"
+                  label="Education"
+                  defaultValue="Graduated from Southern Alberta Institute of Technology majoring in Software Development."
+                  multiline
+                  fullWidth
+                  rows={5}
+                />
+              </div>
+            </Grid>
+            <Grid item xs={12}>
+              <div
+                style={{
+                  borderRadius: "10px",
+                  backgroundColor: "#121212",
+                  width: "100%",
+                  height: "100%",
+                  backgroundImage:
+                    "linear-gradient(rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.09))",
+                }}
+              >
+                <TextField
+                  disabled
+                  id="contained-disabled"
+                  label="Experience"
+                  defaultValue="Junior DevOps @ SparrowConnected.
 June 2021 - Current"
-                multiline
-                fullWidth
-                rows={5}
-              />
-            </div>
+                  multiline
+                  fullWidth
+                  rows={5}
+                />
+              </div>
+            </Grid>
+            <Grid item xs={12}>
+              <div
+                style={{
+                  borderRadius: "10px",
+                  backgroundColor: "#121212",
+                  width: "100%",
+                  height: "100%",
+                  backgroundImage:
+                    "linear-gradient(rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.09))",
+                }}
+              >
+                <TextField
+                  disabled
+                  id="contained-disabled"
+                  label="Programming languages"
+                  defaultValue="Java, JavaScript/HTML/CSS, SQL, Bash, C#, React.js, TypeScript.js"
+                  multiline
+                  fullWidth
+                  rows={5}
+                />
+              </div>
+            </Grid>
+            <Grid item xs={12}>
+              <div
+                style={{
+                  borderRadius: "10px",
+                  backgroundColor: "#121212",
+                  width: "100%",
+                  height: "100%",
+                  backgroundImage:
+                    "linear-gradient(rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.09))",
+                }}
+              >
+                <TextField
+                  disabled
+                  id="contained-disabled"
+                  label="Tools and Frameworks"
+                  defaultValue="Express.js, Node.js, .Net, Azure, Git, Azure DevOps, CI/CD, Maven, Tomcat"
+                  multiline
+                  fullWidth
+                  rows={5}
+                />
+              </div>
+            </Grid>
           </Grid>
-          <Grid item xs={12}>
-            <div
-              style={{
-                borderRadius: "10px",
-                backgroundColor: "#121212",
-                width: "100%",
-                height: "100%",
-                backgroundImage:
-                  "linear-gradient(rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.09))",
-              }}
-            >
-              <TextField
-                disabled
-                id="contained-disabled"
-                label="Programming languages"
-                defaultValue="Java, JavaScript/HTML/CSS, SQL, Bash, C#, React.js, TypeScript.js"
-                multiline
-                fullWidth
-                rows={5}
-              />
-            </div>
-          </Grid>
-          <Grid item xs={12}>
-            <div
-              style={{
-                borderRadius: "10px",
-                backgroundColor: "#121212",
-                width: "100%",
-                height: "100%",
-                backgroundImage:
-                  "linear-gradient(rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.09))",
-              }}
-            >
-              <TextField
-                disabled
-                id="contained-disabled"
-                label="Tools and Frameworks"
-                defaultValue="Express.js, Node.js, .Net, Azure, Git, Azure DevOps, CI/CD, Maven, Tomcat"
-                multiline
-                fullWidth
-                rows={5}
-              />
-            </div>
-          </Grid>
-        </Grid>
+        </div>
       </div>
-    </div>
+      <div style={{ marginBottom: 10 }}></div>
+    </>
   );
 }
 
