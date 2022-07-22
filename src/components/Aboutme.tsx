@@ -6,6 +6,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions, Grid, Link } from "@mui/material";
+import FadeIn from "react-fade-in";
 
 function Aboutme() {
   const styles = (theme) => ({
@@ -45,6 +46,7 @@ function Aboutme() {
             height: "100%",
           }}
         >
+          <FadeIn transitionDuration={2000}>
           <Grid container spacing={2}>
             <Grid item xs={12} display={"flex"}>
               <div
@@ -136,6 +138,7 @@ June 2021 - Current"
               </div>
             </Grid>
           </Grid>
+          </FadeIn>
         </div>
       </div>
       <div style={{ marginBottom: 10 }}></div>
